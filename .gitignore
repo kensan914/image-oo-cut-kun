@@ -1,2 +1,7 @@
 /build
 /dist
+.idea
+__pycache__
+*.spec
+input_images/*
+output_images/*
