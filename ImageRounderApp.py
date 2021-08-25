@@ -12,8 +12,11 @@ icon_data = "R0lGODlheAB4APcAAAAAAAAAAAEBAQAMGAAQHQATIgAWJwAZLAAcMQAgNQAjOgEmPwI
 
 def click_input_files_dialog():
     progress.set(40)
-    file_type = [("", "*")]
-    input_images_path = filedialog.askopenfilename(filetype=file_type, multiple=True)
+    # file_type = [("", "*")]
+    input_images_path = filedialog.askopenfilename(
+        # filetype=file_type,
+        multiple=True
+    )
     files_entry.set(file_separate_sign.join(input_images_path))
 
 def click_output_folder_dialog():
