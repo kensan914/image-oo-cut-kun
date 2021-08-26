@@ -11,6 +11,17 @@ class ImageEditor:
         self.width, self.height = self.img.size
         self.should_save_as_png = False
 
+    def compress(self, resize_px=300):
+        if self.height > self.width:
+            resize_width = resize_px
+            resize_height = (resize_px / self.width) * self.height
+        else:
+            resize_height = resize_px
+            resize_width = (resize_px / self.height) * self.width
+
+        self.img.thumbnail((int(resize_width), int(resize_height)), Image.ANTIALIAS)
+        self.width, self.height = self.img.size
+
     def trim_square(self):
         square_side = min(self.width, self.height)
 
